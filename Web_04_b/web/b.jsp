@@ -1,7 +1,7 @@
 <%-- 
     Document   : b.jsp
     Created on : 08-01-2026, 11:16:06
-    Author     : tungi
+    Author     : Admin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
