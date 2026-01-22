@@ -16,12 +16,13 @@ import utils.DbUtils;
  * @author Admin
  */
 public class UserDAO {
-
+    
     public ArrayList<UserDTO> list = new ArrayList<>();
 
     public UserDAO() {
-    }
 
+    }
+    
     public UserDTO searchById(String username) {
         try {
             Connection conn = DbUtils.getConnection();
@@ -49,7 +50,7 @@ public class UserDAO {
             return null;
         }
     }
-
+    
     public UserDTO login(String username, String password) {
         UserDTO u = searchById(username);
         if (u != null && u.getPassword().equals(password)) {
@@ -57,5 +58,4 @@ public class UserDAO {
         }
         return null;
     }
-
 }

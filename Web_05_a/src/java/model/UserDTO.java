@@ -67,4 +67,9 @@ public class UserDTO {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "UserDTO{" + "userID=" + userID + ", fullName=" + fullName + ", password=" + password + ", roleID=" + roleID + ", status=" + status + '}';
+    }
+
 }

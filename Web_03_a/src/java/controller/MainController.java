@@ -17,7 +17,7 @@ import model.UserDAO;
 
 /**
  *
- * @author tungi
+ * @author Admin
  */
 public class MainController extends HttpServlet {
 

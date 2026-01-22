@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author tungi
+ * @author Admin
  */
 public class UserDTO {
 

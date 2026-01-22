@@ -1,7 +1,6 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
 
@@ -12,16 +11,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.UserDAO;
+import model.UserDTO;
 
 /**
  *
  * @author Admin
  */
-public class MainController extends HttpServlet {
+public class LoginController extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -31,33 +32,29 @@ public class MainController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MainController</title>");            
-            out.println("</head>");
-            out.println("<body>");
+        String url = "";
+        HttpSession session = request.getSession();
+        if (session.getAttribute("user") == null) {
             String txtUsername = request.getParameter("txtUsername");
             String txtPassword = request.getParameter("txtPassword");
+
+            UserDAO udao = new UserDAO();
+            UserDTO user = udao.login(txtUsername, txtPassword);
             
-            String url = "";
-            
-            if(txtUsername.equalsIgnoreCase("admin")
-               && txtPassword.equals("admin")){
-                url ="a.jsp";
-            }else{
-                url ="b.jsp";
+            if (user != null) {
+                url = "a.jsp";
+                session.setAttribute("user", user);
+            } else {
+                url = "login.jsp";
+                request.setAttribute("message", "Invalid username or password!");
             }
-            
-            // Chuyen trang
-            RequestDispatcher rd = request.getRequestDispatcher(url);
-            rd.forward(request, response);
-            
-            out.println("</body>");
-            out.println("</html>");
+
+        } else {
+            url = "a.jsp";
         }
+        // Chuyen trang
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

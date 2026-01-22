@@ -12,7 +12,7 @@ import utils.DbUtils;
 
 /**
  *
- * @author tungi
+ * @author Admin
  */
 public class UserDAO {
 
