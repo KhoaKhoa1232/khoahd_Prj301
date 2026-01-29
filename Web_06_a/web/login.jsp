@@ -1,6 +1,6 @@
 <%-- 
     Document   : login
-    Created on : Jan 19, 2026, 9:55:52 AM
+    Created on : 08-01-2026, 11:08:26
     Author     : Admin
 --%>
 
@@ -13,8 +13,9 @@
     </head>
     <body>
         <form action="MainController" method="post">
-            Username: <input type="text" name="txtUsername" required="required"/> <br/>
-            Password: <input type="password" name="txtPassword" required="required"/> <br/>
+            <input type="hidden" name="action" value="login"/>
+            Username: <input type="text" name="txtUsername" required="required" /> <br/>
+            Password: <input type="password" name="txtPassword" required="required"  /> <br/>
             <input type="submit" value="Login" />
         </form>
         <%

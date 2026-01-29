@@ -22,7 +22,8 @@ import model.UserDTO;
 public class MainController extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -33,17 +34,17 @@ public class MainController extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("action");
         String url = "login";
-
-        if (action.equals("login")) {
+         
+        if(action.equals("login")){
             url = "LoginController";
-        } else if (action.equals("logout")) {
+        }else if(action.equals("logout")){
             url = "LogoutController";
         }
-
+        
         // Chuyen trang
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
-
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

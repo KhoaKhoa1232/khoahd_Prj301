@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package controller;
 
@@ -22,7 +22,8 @@ import model.UserDTO;
 public class LoginController extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -40,12 +41,14 @@ public class LoginController extends HttpServlet {
 
             UserDAO udao = new UserDAO();
             UserDTO user = udao.login(txtUsername, txtPassword);
-            
-            
-            
+            System.out.println(user);
             if (user != null) {
-                url = "a.jsp";
-                session.setAttribute("user", user);
+                if(user.isStatus()){
+                    url = "a.jsp";
+                    session.setAttribute("user", user);
+                }else{
+                    url = "e403.jsp";
+                }
             } else {
                 url = "login.jsp";
                 request.setAttribute("message", "Invalid username or password!");

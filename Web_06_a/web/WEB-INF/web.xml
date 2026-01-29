@@ -13,16 +13,8 @@
         <servlet-class>controller.LogoutController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UserDTO</servlet-name>
-        <servlet-class>model.UserDTO</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UserDAO</servlet-name>
-        <servlet-class>model.UserDAO</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DbUtils</servlet-name>
-        <servlet-class>utils.DbUtils</servlet-class>
+        <servlet-name>SearchController</servlet-name>
+        <servlet-class>controller.SearchController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MainController</servlet-name>
@@ -37,16 +29,8 @@
         <url-pattern>/LogoutController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UserDTO</servlet-name>
-        <url-pattern>/UserDTO</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UserDAO</servlet-name>
-        <url-pattern>/UserDAO</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DbUtils</servlet-name>
-        <url-pattern>/DbUtils</url-pattern>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : a
-    Created on : Jan 19, 2026, 10:29:28 AM
+    Document   : a.jsp
+    Created on : 08-01-2026, 11:15:32
     Author     : Admin
 --%>
 
@@ -18,11 +18,8 @@
             if (u!=null){       
         %>
                 <h1>Welcome, <%=u.getFullName()%> </h1>
-                <<a href="MainController?action=logout&"">Login</a>
-                <h2>Bang dieu khien</h2>
-                Tinh nang 1 <br/>
-                Tinh nang 2 <br/>
-                Tinh nang 3 <br/>
+                <a href="MainController?action=logout&">Logout</a><br/>
+                <a href="search.jsp">Seach</a>
         <%  } else {
                 response.sendRedirect("login.jsp");
             }

@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : Jan 19, 2026, 9:40:07 AM
+    Created on : 08-01-2026, 11:07:24
     Author     : Admin
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href = "login.jsp">Login</a>
+        <a href="login.jsp">Login</a>
     </body>
 </html>

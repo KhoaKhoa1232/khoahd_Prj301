@@ -1,6 +1,6 @@
 <%-- 
-    Document   : E403
-    Created on : Jan 19, 2026, 10:05:46 AM
+    Document   : index
+    Created on : 08-01-2026, 11:07:24
     Author     : Admin
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <a href="login.jsp">Login</a>
     </body>
 </html>
